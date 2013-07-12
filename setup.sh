@@ -26,6 +26,30 @@ sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
 
+# install nodejs
+sudo apt-get update
+# Install a special package
+sudo apt-get install -y python-software-properties python g++ make
+# Add a new repository for apt-get to search
+sudo add-apt-repository ppa:chris-lea/node.js
+# Update apt-get’s knowledge of which packages are where
+sudo apt-get update
+# Now install nodejs and npm
+sudo apt-get install -y nodejs
+
+#install some node packages
+npm install cheerio
+npm install commander
+npm install restler csv accounting
+
+#install heroku
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+#setup heroku
+heroku login
+ssh-keygen -t rsa
+heroku keys:add
+
+
 # git pull and install dotfiles as well
 cd $HOME
 if [ -d ./dotfiles/ ]; then
